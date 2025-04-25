@@ -287,7 +287,7 @@
                   },
                   {
                       "id":  "AA0072",
-                      "action":  "None",
+                      "action":  "Warning",
                       "justification": "Naming rule. Turned off globally. The name of variables and parameters must be suffixed with the type or object name."
                   },
                   {
@@ -528,27 +528,27 @@
                   },
                   {
                       "id":  "AA0132",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0133",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0134",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0135",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0136",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0137",
-                      "action":  "None"
+                      "action":  "Warning"
                   },
                   {
                       "id":  "AA0138",
@@ -936,7 +936,7 @@
                   },
                   {
                       "id":  "AA0234",
-                      "action":  "None",
+                      "action":  "Warning",
                       "justification": "New rule for introducing tooltips on table fields, which means there are too many to fix now. Code Action on the way."
                   },
                   {
@@ -993,7 +993,7 @@
                   },
                   {
                       "id":  "AA0248",
-                      "action":  "None",
+                      "action":  "Warning",
                       "justification": "Rule for missing 'this.' qualification on members. Not an error, rule turned off globally."
                   },
                   {
