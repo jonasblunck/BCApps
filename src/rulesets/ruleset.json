@@ -4,27 +4,27 @@
   "generalAction": "Warning",
   "includedRuleSets": [
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./Analyzer.ruleset.json"
     },
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./AppSourceCop.ruleset.json"
     },
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./CodeCop.ruleset.json"
     },
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./Compiler.ruleset.json"
     },
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./PTECop.ruleset.json"
     },
     {
-      "action": "Error",
+      "action": "Warning",
       "path": "./UICop.ruleset.json"
     }
   ],
@@ -43,6 +43,10 @@
       "id": "AS0053",
       "action": "None",
       "justification": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
+    },
+    {
+      "id":  "AA0137",
+      "action":  "Warning"
     },
     {
       "id": "AS0054",
