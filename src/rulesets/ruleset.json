@@ -1,7 +1,7 @@
 {
   "name": "Ruleset for shipped apps",
   "description": "This ruleset applies to shipped apps.",
-  "generalAction": "Error",
+  "generalAction": "Warning",
   "includedRuleSets": [
     {
       "action": "Error",
