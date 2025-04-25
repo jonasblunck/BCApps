@@ -67,6 +67,7 @@
   "enableCodeCop": true,
   "enableAppSourceCop": true,
   "enablePerTenantExtensionCop": true,
+  "checkForNewWarnings": true,
   "enableUICop": true,
   "enableCodeAnalyzersOnTestApps": true,
   "rulesetFile": "../../../src/rulesets/ruleset.json",
