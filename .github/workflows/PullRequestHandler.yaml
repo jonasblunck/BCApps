@@ -28,7 +28,7 @@ jobs:
     if: (github.event.pull_request.base.repo.full_name != github.event.pull_request.head.repo.full_name) && (github.event_name != 'pull_request')
     runs-on: windows-latest
     steps:
-      - uses: jonasblunck/AL-Go/Actions/VerifyPRChanges@private/jonasbl/warn
+      - uses: jonasblunck/AL-Go/Actions/VerifyPRChanges@private/jonasbl/warn-feedback
 
   Initialization:
     needs: [ PregateCheck ]
@@ -45,7 +45,7 @@ jobs:
       telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
     steps:
       - name: Dump Workflow Information
-        uses: jonasblunck/AL-Go/Actions/DumpWorkflowInfo@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/DumpWorkflowInfo@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
@@ -57,13 +57,13 @@ jobs:
 
       - name: Initialize the workflow
         id: init
-        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
       - name: Read settings
         id: ReadSettings
-        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn-feedback
         with:
           shell: powershell
           get: shortLivedArtifactsRetentionDays
@@ -76,7 +76,7 @@ jobs:
 
       - name: Determine Projects To Build
         id: determineProjectsToBuild
-        uses: jonasblunck/AL-Go/Actions/DetermineProjectsToBuild@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/DetermineProjectsToBuild@private/jonasbl/warn-feedback
         with:
           shell: powershell
           maxBuildDepth: ${{ env.workflowDepth }}
@@ -139,7 +139,7 @@ jobs:
     steps:
       - name: Pull Request Status Check
         id: PullRequestStatusCheck
-        uses: jonasblunck/AL-Go/Actions/PullRequestStatusCheck@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/PullRequestStatusCheck@private/jonasbl/warn-feedback
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -147,7 +147,7 @@ jobs:
 
       - name: Finalize the workflow
         id: PostProcess
-        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn-feedback
         if: success() || failure()
         env:
           GITHUB_TOKEN: ${{ github.token }}

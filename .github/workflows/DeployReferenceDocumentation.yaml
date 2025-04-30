@@ -30,18 +30,18 @@ jobs:
 
       - name: Initialize the workflow
         id: init
-        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
       - name: Read settings
-        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
       - name: Determine Deployment Environments
         id: DetermineDeploymentEnvironments
-        uses: jonasblunck/AL-Go/Actions/DetermineDeploymentEnvironments@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/DetermineDeploymentEnvironments@private/jonasbl/warn-feedback
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -54,7 +54,7 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build Reference Documentation
-        uses: jonasblunck/AL-Go/Actions/BuildReferenceDocumentation@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/BuildReferenceDocumentation@private/jonasbl/warn-feedback
         with:
           shell: powershell
           artifacts: 'latest'
@@ -71,7 +71,7 @@ jobs:
 
       - name: Finalize the workflow
         if: always()
-        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn-feedback
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:

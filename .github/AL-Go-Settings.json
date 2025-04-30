@@ -1,6 +1,6 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/jonasblunck/AL-Go@private/jonasbl/warn",
+  "templateUrl": "https://github.com/jonasblunck/AL-Go@private/jonasbl/warn-feedback",
   "bcContainerHelperVersion": "preview",
   "runs-on": "windows-latest",
   "cacheImageName": "",

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       templateUrl:
-        description: Template Repository URL (current is https://github.com/jonasblunck/AL-Go@private/jonasbl/warn)
+        description: Template Repository URL (current is https://github.com/jonasblunck/AL-Go@private/jonasbl/warn-feedback)
         required: false
         default: ''
       downloadLatest:
@@ -48,14 +48,14 @@ jobs:
 
       - name: Read settings
         id: ReadSettings
-        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn-feedback
         with:
           shell: powershell
           get: templateUrl
 
       - name: Get Workflow Multi-Run Branches
         id: GetBranches
-        uses: jonasblunck/AL-Go/Actions/GetWorkflowMultiRunBranches@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/GetWorkflowMultiRunBranches@private/jonasbl/warn-feedback
         with:
           shell: powershell
           includeBranches: ${{ github.event.inputs.includeBranches }}
@@ -85,7 +85,7 @@ jobs:
 
     steps:
       - name: Dump Workflow Information
-        uses: jonasblunck/AL-Go/Actions/DumpWorkflowInfo@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/DumpWorkflowInfo@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
@@ -96,19 +96,19 @@ jobs:
 
       - name: Initialize the workflow
         id: init
-        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowInitialize@private/jonasbl/warn-feedback
         with:
           shell: powershell
 
       - name: Read settings
-        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/ReadSettings@private/jonasbl/warn-feedback
         with:
           shell: powershell
           get: commitOptions
 
       - name: Read secrets
         id: ReadSecrets
-        uses: jonasblunck/AL-Go/Actions/ReadSecrets@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/ReadSecrets@private/jonasbl/warn-feedback
         with:
           shell: powershell
           gitHubSecrets: ${{ toJson(secrets) }}
@@ -135,7 +135,7 @@ jobs:
           Add-Content -Encoding UTF8 -Path $env:GITHUB_ENV -Value "downloadLatest=$downloadLatest"
 
       - name: Update AL-Go system files
-        uses: jonasblunck/AL-Go/Actions/CheckForUpdates@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/CheckForUpdates@private/jonasbl/warn-feedback
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -149,7 +149,7 @@ jobs:
 
       - name: Finalize the workflow
         if: always()
-        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn
+        uses: jonasblunck/AL-Go/Actions/WorkflowPostProcess@private/jonasbl/warn-feedback
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
