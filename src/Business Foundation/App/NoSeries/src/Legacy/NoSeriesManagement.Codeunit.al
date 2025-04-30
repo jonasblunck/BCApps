@@ -145,6 +145,7 @@ codeunit 396 NoSeriesManagement
     procedure SelectSeries(DefaultNoSeriesCode: Code[20]; OldNoSeriesCode: Code[20]; var NewNoSeriesCode: Code[20]): Boolean
     var
         IsHandled: Boolean;
+        IsHandled2: Boolean;
         Result: Boolean;
     begin
         IsHandled := false;
