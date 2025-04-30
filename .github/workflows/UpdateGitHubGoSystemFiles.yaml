@@ -136,6 +136,8 @@ jobs:
 
       - name: Update AL-Go system files
         uses: jonasblunck/AL-Go/Actions/CheckForUpdates@private/jonasbl/warn
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           shell: powershell
           token: ${{ fromJson(steps.ReadSecrets.outputs.Secrets).ghTokenWorkflow }}
