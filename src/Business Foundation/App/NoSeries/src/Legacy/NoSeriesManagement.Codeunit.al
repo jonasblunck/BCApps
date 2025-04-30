@@ -5,6 +5,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 // ------------------------------------------------------------------------------------------------
 // adding some more comments
+// adding some more comments
 
 namespace Microsoft.Foundation.NoSeries;
 
