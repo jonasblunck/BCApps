@@ -4,6 +4,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 // ------------------------------------------------------------------------------------------------
+// adding some more comments
+// adding some more comments
+
 
 namespace Microsoft.Foundation.NoSeries;
 
@@ -137,7 +140,6 @@ codeunit 396 NoSeriesManagement
         end;
     end;
 
-    // NewNoSeriesCode specifies the default number series to highlight in the page
     // If this one is not specified then OldNoSeriesCode is used instead as default highlight
     // Otherwise DefaultNoSeriesCode is used if it exist
     // All related no series to DefaultNoSeriesCode are also available for selection
@@ -145,6 +147,7 @@ codeunit 396 NoSeriesManagement
     procedure SelectSeries(DefaultNoSeriesCode: Code[20]; OldNoSeriesCode: Code[20]; var NewNoSeriesCode: Code[20]): Boolean
     var
         IsHandled: Boolean;
+        IsHandled2: Boolean;
         Result: Boolean;
     begin
         IsHandled := false;
